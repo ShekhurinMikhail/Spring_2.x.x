@@ -17,16 +17,10 @@ public class CarServiceImp implements CarService {
         listCars.add(new Car("Opel5", "Corsa5", 160));
     }
     @Override
-    public List<Car> getSomeCars(int n) {
-        if (n >= 5) {
+    public List<Car> getSomeCars(Integer n) {
+        if (n == null || n >= 5) {
             return listCars;
         }
         return listCars.stream().limit(n).toList();
     }
-
-    @Override
-    public List<Car> getListCars() {
-        return listCars;
-    }
-
 }
